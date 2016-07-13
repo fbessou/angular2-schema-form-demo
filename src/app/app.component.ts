@@ -10,14 +10,13 @@ require("style!./app.css");
 	directives: [
 		Form
 	],
-	providers: [FieldRegistryService],
 	template: require("./app.component.html"),
 })
 export class DemoApp {
 	private schema:any;
 	private model:any;
 
-	constructor(registry: FieldRegistryService) {
+	constructor() {
 		this.schema = require("./sampleschema.json")
 		this.model = require("./samplemodel.json");
 	}
