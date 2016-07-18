@@ -62,6 +62,9 @@ module.exports = {
 			name: ['demo', 'vendor',"polyfills"]
 		})
 	],
+	devServer: {
+		port : 3002
+	},
 	node: {
 		global: 'window',
 		crypto: 'empty',
