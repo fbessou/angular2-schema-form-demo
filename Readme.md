@@ -22,4 +22,4 @@ An example usage of [Angular 2 Schema form](https://github.com/makinacorpus/angu
 	npm start
 ```
 
-and go to `http://localhost:8080` in your browser.
+and go to `http://localhost:3002` in your browser.
