@@ -1,6 +1,5 @@
 import {Component, Directive } from "@angular/core";
-import {NgModel, CORE_DIRECTIVES, FORM_DIRECTIVES} from "@angular/common";
-import {Form, FieldRegistryService} from "angular2-schema-form";
+import {Form} from "angular2-schema-form";
 
 require("style!../bootstrap.min.css");
 require("style!./app.css");
