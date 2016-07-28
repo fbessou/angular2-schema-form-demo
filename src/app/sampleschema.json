@@ -164,22 +164,11 @@
 			"pattern": "^<h1>"
 		}
 	},
-	"links": [
-	{
-		"title": "Send",
-		"description": "Send the transaction",
-		"href": "#send",
-		"method": "GET",
-		"rel": "action"
-	},
-	{
-		"title": "Cancel",
-		"description": "Cancel the transaction",
-		"href": "#cancel",
-		"rel": "action"
+	"buttons":[{
+		"id": "send",
+		"label": "Send"
 	}],
-	"fieldsets":[
-	{
+	"fieldsets":[{
 		"id": "part_1",
 		"title": "Part 1 - Recipient",
 		"fields":[ "firstName", "lastName", "bornOn","moreInfo", "favoriteColor"]
