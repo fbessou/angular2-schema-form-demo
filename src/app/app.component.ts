@@ -12,14 +12,25 @@ require("style!./app.css");
 export class AppComponent {
 	private schema:any;
 	private model:any;
+	private validators = {};
 
 	constructor(registry: WidgetRegistry) {
 		this.schema = require("./sampleschema.json");
 		this.model = require("./samplemodel.json");
 		registry.register("tinymce", TinyMCEWidget);
+
+		this.validators["/student/id"] = this.validateId;
 	}
 
-	ngOnInit() {
+	validateId(value, property, form) {
+		if (value.length === 11) { 
+			let list = value.substr(0,10).split('');
+			if (list.reduce((p, c, i) => { return p - (i%2 ? +c : -c);}, 0) ) {
+				let error = {"INE": {"checksum": "INVALID CHECKSUM"}};
+				return error;
+			}
+		}
+		return null;
 	}
 
 }
