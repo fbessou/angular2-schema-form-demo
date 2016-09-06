@@ -306,6 +306,11 @@
 					"description": "Exchange country"
 				}
 			}
+		},
+		"comment": {
+			"type": "string",
+			"description": "Leave us a comment !",
+			"widget": "tinymce"
 		}
 	},
 	"required": ["student", "placeOfBirth", "father", "mother", "addressFamily", "addressMail", "phoneNumber", "studyPlace"],
@@ -328,6 +333,9 @@
 	}, {
 		"fields": ["studyPlace"],
 		"title": "Current university"
+	}, {
+		"fields": ["comment"],
+		"title": "Contact us"
 	}]
 }
 
