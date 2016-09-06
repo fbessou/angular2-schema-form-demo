@@ -1,198 +1,333 @@
 {
-	"$schema": "http://json-schema.org/draft-04/hyper-schema#",
 	"type": "object",
+	"widget": "wizard",
 	"properties": {
-		"firstName": {
-			"type": "string",
-			"minLength": 2,
-			"maxLength": 40,
-			"title": "First name",
-			"description": "First name"
+		"student": {
+			"type": "object",
+			"properties": {
+				"lastName": {
+					"type": "string",
+					"minLength": 2,
+					"maxLength": 32,
+					"description": "Last name"
+				},
+				"firstName": {
+					"type": "string",
+					"minLength": 2,
+					"maxLength": 32,
+					"description": "First name"
+				},
+				"id": {
+					"type": "string",
+					"pattern": "^[0-9]{10}[A-Z]$",
+					"description": "Id",
+					"placeholder": "Ex: 0000000000A"
+				},
+				"dateOfBirth": {
+					"type": "string",
+					"format": "date",
+					"description": "Date of Birth",
+					"placeholder": "1995-10-12"
+				}
+			}
 		},
-		"lastName": {
-			"type": "string",
-			"minLength": 2,
-			"maxLength": 40,
-			"title": "Last name",
-			"description": "Last name"
+		"placeOfBirth": {
+			"type": "object",
+			"properties": {
+				"city": {
+					"type": "string",
+					"minLength": 2,
+					"maxLength": 32,
+					"description": "City"
+				},
+				"country": {
+					"type": "string",
+					"widget": "select",
+					"oneOf": [{
+						"enum": ["france"],
+						"description": "France"
+					}, {
+						"enum": ["belgium"],
+						"description": "Belgium"
+					}, {
+						"enum": ["usa"],
+						"description": "USA"
+					}],
+					"description": "Country",
+					"default": "usa"
+				},
+				"state": {
+					"type": "string",
+					"widget": "select",
+					"oneOf": [{
+						"enum": ["AL"],
+						"description": "01 Alabama"
+					}, {
+						"enum": ["AK"],
+						"description": "02 Alaska"
+					}, {
+						"enum": ["AZ"],
+						"description": "03 Arizona"
+					}
+					],
+					"default": "AL",
+					"description": "State",
+					"visibleIf": {
+						"country": ["usa"]
+					}
+				}
+			}
 		},
-		"bornOn": {
-			"type": "string",
-			"format": "date",
-			"widget": "date",
-			"placeholder": "Ex: 2009-03-11",
-			"description": "Born on"
+		"father": {
+			"type": "object",
+			"properties": {
+				"lastName": {
+					"type": "string",
+					"minLength": 2,
+					"maxLength": 32,
+					"description": "Last name"
+				},
+				"firstName": {
+					"type": "string",
+					"minLength": 2,
+					"maxLength": 32,
+					"description": "First name"
+				},
+				"dateOfBirth": {
+					"type": "string",
+					"format": "date",
+					"description": "Date of birth",
+					"placeholder": "1995-10-12"
+				}
+			},
+			"description": "Father"
 		},
-		"moreInfo":{
-			"type": "boolean",
-			"widget": "checkbox",
-			"description":"More information?",
-			"default": true
+		"mother": {
+			"type": "object",
+			"properties": {
+				"lastName": {
+					"type": "string",
+					"minLength": 2,
+					"maxLength": 32,
+					"description": "Last name"
+				},
+				"maidenName": {
+					"type": "string",
+					"minLength": 2,
+					"maxLength": 32,
+					"description": "Maiden name"
+				},
+				"firstName": {
+					"type": "string",
+					"minLength": 2,
+					"maxLength": 32,
+					"description": "First name"
+				},
+				"dateOfBirth": {
+					"type": "string",
+					"format": "date",
+					"description": "Date of birth",
+					"placeholder": "1995-10-12"
+				}
+			},
+			"description": "Mother"
 		},
-		"favoriteColor": {
-			"type": "string",
-			"pattern": "^#[0-9a-fA-F]{6}$",
-			"widget": "color",
-			"description": "Favorite color",
+		"addressFamily": {
+			"type": "object",
+			"properties": {
+				"addressLine1": {
+					"type": "string",
+					"minLength": 10,
+					"maxLength": 32,
+					"description": "Address line 1"
+				},
+				"addressLine2": {
+					"type": "string",
+					"minLength": 10,
+					"maxLength": 32,
+					"description": "Address line 2"
+				},
+				"zipCode": {
+					"type": "string",
+					"pattern": "^[0-9]{5}$",
+					"description": "ZIP code"
+				},
+				"city": {
+					"type": "string",
+					"minLength": 2,
+					"maxLength": 32,
+					"description": "City"
+				}
+			},
+			"description": "Family address"
+		},
+		"addressStudent": {
+			"type": "object",
+			"properties": {
+				"addressLine1": {
+					"type": "string",
+					"minLength": 10,
+					"maxLength": 32,
+					"description": "Address line 1"
+				},
+				"addressLine2": {
+					"type": "string",
+					"minLength": 10,
+					"maxLength": 32,
+					"description": "Address line 2"
+				},
+				"zipCode": {
+					"type": "string",
+					"pattern": "^[0-9]{5}$",
+					"description": "ZIP code"
+				},
+				"city": {
+					"type": "string",
+					"minLength": 2,
+					"maxLength": 32,
+					"description": "City"
+				}
+			},
 			"visibleIf": {
-				"moreInfo": [true]
-			}
-		},
-		"transactionNumber": {
-			"type": "integer",
-			"minimum": 0,
-			"description": "Transaction number"
-		},
-		"transactionDescription": {
-			"type": "string",
-			"widget": "textline",
-			"description": "What is being transacted"
-		},
-		"category": {
-			"type":"string",
-			"widget": "select",
-			"oneOf": [{
-				"description": "Design",
-				"enum": ["design"]
+				"/sameAddress": [true]
 			},
-			{
-				"description": "High-Tech",
-				"enum": ["hightech"]
-			},
-			{
-				"description": "Materials",
-				"enum": ["materials"]
-			},
-			{
-				"description": "Services",
-				"enum": ["services"]
-			}],
-			"description": "Category"
+			"description": "Student address"
 		},
-		"promotion": {
-			"type":"string",
-			"description": "Promotion",
-			"widget": "radio",
-			"oneOf": [{
-				"description": "Student discount (20%)",
-				"enum": ["student"]
-			},
-			{
-				"description": "Summer 2016 discount (15%)",
-				"enum": ["summer"]
-			},{
-				"description": "None",
-				"enum": ["none"]
-			}]
-		},
-		"confirmationMail": {
-			"type": "string",
-			"description": "Email",
-			"format": "email"
-		},
-		"password": {
-			"type": "string",
-			"widget": "password",
-			"description": "Password"
-		},
-		"numberOfBoxes": {
-			"type": "number",
-			"widget": "range",
-			"description": "Number of boxes required",
-			"minimum": 1,
-			"maximum": 10
-		},
-		"deliveryService": {
-			"type":"string",
-			"widget":"select",
-			"description": "Delivery service",
-			"oneOf":[{
-				"description": "UPS",
-				"enum": ["ups"]
-			},
-			{
-				"description": "FedEx",
-				"enum": ["fedex"]
-			},{
-				"description":"Other",
-				"enum": ["other"]
-			}],
-			"default":"fedex"
-		},
-		"otherDeliveryService":{
-			"type": "string",
-			"minLength":2,
-			"visibleIf": {
-				"deliveryService":["other"]
-			}
-		},
-		"freeShipping": {
+		"sameAddress": {
 			"type": "boolean",
-			"widget": "checkbox",
-			"description":"Free shipping",
-			"visibleIf":{
-				"deliveryService":["other","ups"]
-			}
+			"default": false,
+			"description": "Check if student's address is different from parents address"
 		},
-		"shippingPrice": {
-			"type": "number",
-			"description":"ShippingCost",
-			"minimum":0,
-			"maximum":200,
-			"visibleIf":{
-				"freeShipping":[false]
-			}
-		},
-		"sendApologies":{
-			"type": "boolean",
-			"widget": "checkbox",
-			"description":"Send apologies for the shipping cost",
-			"visibleIf":{
-				"shippingPrice":[22,23]
-			}
-		},
-		"useCustomEmail": {
-			"type": "boolean",
-			"description": "Write a custom email ?"
-		},
-		"customEmail":{
+		"addressMail": {
 			"type": "string",
-			"widget": "richtext",
-			"visibleIf": {
-				"useCustomEmail": [true]
-			},
-			"pattern": "^<h1>"
+			"format": "email",
+			"description": "Email address"
+		},
+		"phoneNumber": {
+			"type": "string",
+			"pattern": "^(\\d\\d-){4}\\d{2}$",
+			"description": "Phone number"
+		},
+		"siblings": {
+			"type": "array",
+			"description": "Siblings in higher education",
+			"items": {
+				"type": "object",
+				"properties": {
+					"lastName": {
+						"type": "string",
+						"description": "Last name",
+						"minLength": 2,
+						"maxLength": 30
+					},
+					"firstName": {
+						"type": "string",
+						"description": "First name",
+						"minLength": 2,
+						"maxLength": 30
+					},
+					"degree": {
+						"type": "string",
+						"widget": "select",
+						"oneOf": [ {
+							"enum": ["L1"],
+							"description": "Licence 1"
+						}, {
+							"enum": ["L2"],
+							"description": "Licence 2"
+						}, {
+							"enum": ["L3"],
+							"description": "Licence 3"
+						}, {
+							"enum": ["M1"],
+							"description": "Master 1"
+						}, {
+							"enum": ["M2"],
+							"description": "Master 2"
+						}],
+						"description": "Academic degree (current year)",
+						"default": "L1"
+					}
+				}
+			}
+		},
+		"studyPlace": {
+			"type": "object",
+			"properties": {
+				"universityName": {
+					"type": "string",
+					"minLength": 10,
+					"maxLength": 32,
+					"description": "Name of the university"
+				},
+				"degree": {
+					"type": "string",
+					"widget": "select",
+					"oneOf": [ {
+						"enum": ["L1"],
+						"description": "Licence 1"
+					}, {
+						"enum": ["L2"],
+						"description": "Licence 2"
+					}, {
+						"enum": ["L3"],
+						"description": "Licence 3"
+					}, {
+						"enum": ["M1"],
+						"description": "Master 1"
+					}, {
+						"enum": ["M2"],
+						"description": "Master 2"
+					}],
+					"description": "Academic degree (current year)",
+					"default": "L1"
+				},
+				"exchange": {
+					"type": "boolean",
+					"description": "Check if the student is in an exchange program"
+				},
+				"country": {
+					"type": "string",
+					"widget": "select",
+					"oneOf": [ {
+						"enum": ["england"],
+						"description": "England"
+					}, {
+						"enum": ["USA"],
+						"description": "USA"
+					}, {
+						"enum": ["spain"],
+						"description": "Espagne"
+					}],
+					"default": "USA",
+					"visibleIf": {
+						"/studyPlace/exchange": [true]
+					},
+					"description": "Exchange country"
+				}
+			}
 		}
 	},
-	"buttons":[{
-		"id": "send",
-		"label": "Send"
-	}],
-	"fieldsets":[{
-		"id": "part_1",
-		"title": "Part 1 - Recipient",
-		"fields":[ "firstName", "lastName", "bornOn","moreInfo", "favoriteColor"]
-	},
-	{
-		"id": "part_2",
+	"required": ["student", "placeOfBirth", "father", "mother", "addressFamily", "addressMail", "phoneNumber", "studyPlace"],
 
-		"title": "Part 2 - Transaction",
-		"fields":["transactionNumber", "transactionDescription","promotion","category"]
-	},
-	{
-		"id": "part_3",
-		"title": "Part 3 - Shipping",
-		"fields": ["numberOfBoxes","deliveryService","otherDeliveryService","freeShipping","shippingPrice","sendApologies"]
-	},
-	{
-		"id": "part_4",
-		"title": "Part 4 - Email",
-		"fields": ["useCustomEmail","customEmail"]
-	},
-	{
-		"id": "part_4",
-		"title": "Part 4 - Confirmation",
-		"fields": ["confirmationMail","password"]
-	}],
-	"required": ["firstName", "lastName", "transactionNumber","password"]
+	"fieldsets": [{
+		"fields": ["student"],
+		"title": "Student"
+	}, {
+		"fields": ["placeOfBirth"],
+		"title": "Place of birth"
+	}, {
+		"fields": ["father", "mother"],
+		"title": "Parents"
+	}, {
+		"fields": ["addressFamily", "sameAddress", "addressStudent", "addressMail", "phoneNumber"],
+		"title": "Contact"
+	}, {
+		"fields": ["siblings"],
+		"title": "Siblings"
+	}, {
+		"fields": ["studyPlace"],
+		"title": "Current university"
+	}]
 }
+

@@ -1,0 +1,16 @@
+:host {
+	display: flex;
+}
+
+:host > .wizardBtn {
+	flex: 1;
+	min-width: 12px;
+}
+
+:host > .wizardBtn > button {
+	height: 100%;
+}
+
+:host > .wizardContent {
+	flex: 100;
+}

@@ -9,6 +9,7 @@ const METADATA = {
 
 module.exports = {
 	metadata:METADATA,
+	context: path.join(__dirname, '.'),
 	entry: {
 		"vendor":path.resolve("./src/vendor.js"),
 		"polyfills":path.resolve("./src/polyfills.js"),
@@ -58,6 +59,7 @@ module.exports = {
 			template: 'src/index.html',
 			chunksSortMode: 'dependency'
 		}),
+		new CopyWebpackPlugin([{from: "src/public/"}]),
 		new webpack.optimize.CommonsChunkPlugin({
 			name: ['demo', 'vendor',"polyfills"]
 		})

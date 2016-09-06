@@ -1,13 +1,63 @@
+body {
+	#background: #fefefe
+}
+
+nav div.container{
+	margin: auto;
+	float: none;
+}
+nav .navbar-brand {
+	width: 75px;
+	height: 75px;
+}
+main {
+	margin: auto;
+	text-align: left;
+}
+
+fieldset {
+	padding: 10px;
+	text-align: left;
+	background: #f5f5f5;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+fieldset legend {
+	float:left;
+	border: none;
+	margin-bottom: 2px;
+}
+
+fieldset fieldset {
+	border: none;
+	background: rgba(250,250,250,0.1)
+	margin-bottom: 5px;
+}
+
 input, textarea {
 	border:1px solid black;
 	border-radius:3px;
 }
 
 .ng-invalid {
-	background-color:#ffeeee;
+	color: #772222;
+	border-left: 5px solid #aa2222;
 }
 
 .ng-valid {
-	background-color:#eeffee;
+	color: #225522;
+	border-left: 5px solid #227722;
 }
 
+.prevBtn {
+	text-align: right;
+}
+
+.nextBtn {
+	text-align: left;
+}
+
+.fill-height {
+	height: 100%;
+}
