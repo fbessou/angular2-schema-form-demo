@@ -9,8 +9,8 @@ import { Component } from "@angular/core";
 		<span *ngFor="let fieldset of schema.fieldsets; let i=index">
 			<fieldset *ngIf="currentPage === i">
 				<legend *ngIf="fieldset.title">{{fieldset.title}}</legend>
-				<formelement *ngFor="let fieldId of fieldset.fields" [formProperty]="formProperty.getProperty(fieldId)" >
-				</formelement>
+				<form-element *ngFor="let fieldId of fieldset.fields" [formProperty]="formProperty.getProperty(fieldId)" >
+				</form-element>
 			</fieldset>
 		</span>
 	</div>

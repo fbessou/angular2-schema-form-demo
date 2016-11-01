@@ -4,7 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 var path = require("path");
 const METADATA = {
 	title: "Angular2 Schema Form",
-	baseUrl: "/"
+	baseUrl: "./"
 };
 
 module.exports = {
