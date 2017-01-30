@@ -2,7 +2,7 @@
 	"compilerOptions": {
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
-		"target": "es5",
+		"target": "es6",
 		"module": "commonjs",
 		"removeComments": true,
 		"sourceMap": true
@@ -12,12 +12,11 @@
 		"forkChecker": true
 	},
 	"exclude": [
-		"typings/main.d.ts",
-		"typings/main",
 		"node_modules"
 	],
 	"compileOnSave": false,
 	"buildOnSave": false,
-	"atom": { "rewriteTsconfig": false }
+	"atom": { "rewriteTsconfig": false },
+	"typeRoots":["./node_modules/@types"]
 }
 

@@ -1,12 +1,34 @@
-/__build__
-/__server_build__
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
 /node_modules
-/typings
-/coverage
-/tsd_typings/
+/bower_components
+
+# IDEs and editors
+/.idea
+/.vscode
+.project
+.classpath
+*.launch
+.settings/
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
 npm-debug.log
+testem.log
+/typings
 
-/dist/
+# e2e
+/e2e/*.js
+/e2e/*.map
 
-.idea
-.vscode
+#System Files
+.DS_Store
+Thumbs.db

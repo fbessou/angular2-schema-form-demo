@@ -1,11 +1,11 @@
 <nav class="navbar navbar-default">
 	<div class="container navbar-header">
-		<img class="navbar-brand" src="./images/angular_academic.png">
+		<img class="navbar-brand" src="./assets/images/angular_academic.png">
 		<h1><small>Angular2 schema form demo</small></h1>
 	</div>
 </nav>
 <main class="container">
-<schema-form class="col-md-6" [schema]="schema" [validators]="validators" (onChange)="val=$event.value"></schema-form>
+<sf-form class="col-md-6" [schema]="schema" [validators]="validators" (onChange)="val=$event.value"></sf-form>
 <pre class="col-md-6">{{val | json}}</pre>
 </main>
 
