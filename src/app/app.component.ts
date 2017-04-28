@@ -1,5 +1,6 @@
 import { Component} from '@angular/core';
 import { WidgetRegistry } from 'angular2-schema-form';
+import { Http, Response } from '@angular/http';
 
 @Component({
   selector: 'sf-demo-app',
@@ -13,9 +14,9 @@ export class AppComponent {
   private model: any;
   private validators = {};
 
-  constructor(registry: WidgetRegistry) {
-    /*this.schema = require('./sampleschema.json');
-    this.model = require('./samplemodel.json');*/
+  constructor(registry: WidgetRegistry, private http: Http,) {
+//	this.http.get('./assets/sampleschema.json').map((res: Response) => res.json()).subscribe(res => this.schema = res);	
+	this.http.get('./assets/samplemodel.json').map((res: Response) => res.json()).subscribe(res => this.model = res);
 
     this.schema = {
 	"type": "object",
@@ -357,21 +358,6 @@ export class AppComponent {
 		"title": "Contact us"
 	}]
 }
-
- this.model = {
-	"firstName": "John",
-	"lastName": "Doe",
-	"transactionNumber":123456,
-	"favoriteColor": "#aaafff",
-	"transactionDescription": "Payment for your subscription",
-	"password": "admin",
-	"category": "hightech",
-	"freeShipping": false,
-	"customEmail": "Nothing here..."
-}
-
-
-
 
     this.validators['/student/id'] = this.validateId;
   }

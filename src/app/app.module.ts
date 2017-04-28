@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpModule, Http } from '@angular/http';
 import {
   SchemaFormModule,
   DefaultWidgetRegistry,
   WidgetRegistry
 } from 'angular2-schema-form';
 
-import {
-  WizardWidget
-} from './wizard.widget';
+import { WizardWidget } from './wizard.widget';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
   imports: [
     BrowserModule,
-    SchemaFormModule
+    SchemaFormModule,
+    HttpModule
   ],
   declarations: [AppComponent, WizardWidget],
   entryComponents: [WizardWidget],
