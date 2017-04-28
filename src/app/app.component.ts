@@ -6,7 +6,6 @@ require('style!./app.css');*/
 
 @Component({
   selector: 'app-root',
-  // template: require('./app.component.html'),
   templateUrl: './app.component.html',
   
 })
@@ -359,6 +358,19 @@ export class AppComponent {
 		"title": "Contact us"
 	}]
 }
+
+ this.model = {
+	"firstName": "John",
+	"lastName": "Doe",
+	"transactionNumber":123456,
+	"favoriteColor": "#aaafff",
+	"transactionDescription": "Payment for your subscription",
+	"password": "admin",
+	"category": "hightech",
+	"freeShipping": false,
+	"customEmail": "Nothing here..."
+}
+
 
 
 
