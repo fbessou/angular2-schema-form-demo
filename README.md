@@ -28,3 +28,4 @@ and go to `http://localhost:4200` in your browser.
 ## TODO
 
 - Add ../bootstrap.min.css on app.components.ts
+- Add JSON from import/require... on app.components.ts
