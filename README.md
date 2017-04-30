@@ -23,9 +23,3 @@ An example usage of [Angular 2 Schema form](https://github.com/makinacorpus/angu
 ```
 
 and go to `http://localhost:4200` in your browser.
-
-
-## TODO
-
-- Add ../bootstrap.min.css on app.components.ts
-- Add JSON from import/require... on app.components.ts
