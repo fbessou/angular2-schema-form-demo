@@ -21,7 +21,7 @@
       "styles": [
         "./../node_modules/bootstrap/dist/css/bootstrap.min.css",        
         "styles.css",
-        "app.css"
+        "app/app.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",

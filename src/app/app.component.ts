@@ -10,11 +10,10 @@ export class AppComponent {
   private schema: any;
   private model: any;
   private validators = {};
-  private config = new Config();
 
   constructor(registry: WidgetRegistry) {
-    this.schema = this.config.schema();
-    this.model = this.config.model();
+    this.schema = Config.SCHEMA;
+    this.model = Config.MODEL;
 
     this.validators['/student/id'] = this.validateId;
   }
