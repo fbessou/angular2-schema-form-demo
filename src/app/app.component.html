@@ -5,7 +5,7 @@
 	</div>
 </nav>
 <main class="container">
-<sf-form class="col-md-6" [schema]="schema" [validators]="validators" (onChange)="val=$event.value"></sf-form>
+<sf-form class="col-md-6" [schema]="schema" [validators]="validators" [model]="model" (onChange)="val=$event.value"></sf-form>
 <pre class="col-md-6">{{val | json}}</pre>
 </main>
 
