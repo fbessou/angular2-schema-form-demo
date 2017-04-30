@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule, Http } from '@angular/http';
 import {
   SchemaFormModule,
   DefaultWidgetRegistry,
@@ -14,8 +13,7 @@ import { AppComponent } from './app.component';
 @NgModule({
   imports: [
     BrowserModule,
-    SchemaFormModule,
-    HttpModule
+    SchemaFormModule
   ],
   declarations: [AppComponent, WizardWidget],
   entryComponents: [WizardWidget],

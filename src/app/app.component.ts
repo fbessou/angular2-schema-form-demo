@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { WidgetRegistry } from 'angular2-schema-form';
-import { Http, Response } from '@angular/http';
 import { Config } from './config';
+
 @Component({
   selector: 'sf-demo-app',
   templateUrl: './app.component.html'
@@ -12,8 +12,7 @@ export class AppComponent {
   private validators = {};
   private config = new Config();
 
-  constructor(registry: WidgetRegistry, private http: Http) {
-
+  constructor(registry: WidgetRegistry) {
     this.schema = this.config.schema();
     this.model = this.config.model();
 
