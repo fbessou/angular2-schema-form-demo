@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import {
   SchemaFormModule,
   DefaultWidgetRegistry,
   WidgetRegistry
-} from 'angular2-schema-form/src';
+} from 'angular2-schema-form';
 
-import {
-  WizardWidget
-} from './wizard.widget';
+import { WizardWidget } from './wizard.widget';
 
 import { AppComponent } from './app.component';
 

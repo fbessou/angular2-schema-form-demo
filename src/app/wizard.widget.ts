@@ -1,4 +1,4 @@
-import { ObjectLayoutWidget } from 'angular2-schema-form/src';
+import { ObjectLayoutWidget } from 'angular2-schema-form';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -16,7 +16,7 @@ import { Component, OnInit } from '@angular/core';
   </div>
   <button (click)='nextPage()' class='btn btn-default wizardBtn' [attr.disabled]='!hasNextPage()?true:null'> &gt; </button>
   `,
-  styles: [require('./wizard.widget.css')]
+  styles: ['./wizard.widget.css']
 })
 export class WizardWidget extends ObjectLayoutWidget implements OnInit {
   private currentPage = null;
