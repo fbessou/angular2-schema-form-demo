@@ -6,7 +6,7 @@ An example usage of [Angular 2 Schema form](https://github.com/makinacorpus/angu
 
 ```bash
 	# Clone the repository
-	git clone https://github.com/fbessou/angular2-schema-form-demo.git
+	git clone https://github.com/aitoribanez/angular2-schema-form-demo.git
 
 	# Enter the newly created directory
 	cd angular2-schema-form-demo
