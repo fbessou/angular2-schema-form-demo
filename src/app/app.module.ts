@@ -5,7 +5,7 @@ import {
   SchemaFormModule,
   DefaultWidgetRegistry,
   WidgetRegistry
-} from 'angular2-schema-form/src';
+} from 'angular2-schema-form';
 
 import {
   WizardWidget

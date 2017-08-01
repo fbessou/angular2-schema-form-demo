@@ -1,4 +1,4 @@
-import { ObjectLayoutWidget } from 'angular2-schema-form/src';
+import { ObjectLayoutWidget } from 'angular2-schema-form';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
