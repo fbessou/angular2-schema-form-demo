@@ -1,10 +1,11 @@
 import { Component} from '@angular/core';
-import { WidgetRegistry } from 'angular2-schema-form/src';
+import { WidgetRegistry } from 'angular2-schema-form';
 
-require('style!../bootstrap.min.css');
-require('style!./app.css');
+// require('style-loader!../bootstrap.min.css');
+// require('style-loader!./app.css');
 
 @Component({
+  styleUrls: ['../../node_modules/bootstrap/dist/css/bootstrap.min.css', './app.css'],
   selector: 'sf-demo-app',
   template: require('./app.component.html'),
 })
